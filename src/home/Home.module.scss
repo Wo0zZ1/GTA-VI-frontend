@@ -1,0 +1,56 @@
+.wrapper {
+	@apply w-screen min-h-screen flex items-center justify-center;
+
+	> form {
+		animation: slideIn 1s ease-in-out;
+
+		@apply mt-36 w-max p-3 left-5 top-5 backdrop-blur-lg rounded-xl;
+
+		> h1 {
+			@apply text-2xl mb-3;
+		}
+
+		> input {
+			@apply block py-1 px-3 mb-3 w-full border border-transparent bg-black/30 placeholder:text-white/60 outline-none;
+			transition: border-color 0.4s ease;
+
+			&:focus {
+				@apply border-[#c88acb];
+			}
+		}
+
+		> button {
+			@apply w-full text-lg font-medium uppercase py-2 px-4 border border-white inline-block mt-2;
+			transition: box-shadow 0.2s ease, background-color 0.2s ease;
+
+			&:hover {
+				@apply shadow-sm shadow-white bg-white/10;
+			}
+		}
+	}
+}
+
+.success {
+	@apply text-white text-2xl font-medium m-auto py-2 px-4 backdrop-blur-lg rounded-xl;
+	animation: fade 0.4s;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(-110%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
